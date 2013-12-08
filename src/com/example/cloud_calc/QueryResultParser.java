@@ -8,8 +8,12 @@ import java.util.ArrayList;
 import android.util.Log;
 
 import com.wolfram.alpha.WAEngine;
+import com.wolfram.alpha.WAException;
+import com.wolfram.alpha.WAPlainText;
+import com.wolfram.alpha.WAPod;
 import com.wolfram.alpha.WAQuery;
 import com.wolfram.alpha.WAQueryResult;
+import com.wolfram.alpha.WASubpod;
 
 /**
  * @author Joshua Jung
@@ -31,7 +35,7 @@ public class QueryResultParser {
 	
 	public ArrayList<PodData> getResultData() {
 		data = new ArrayList<PodData>();
-		PodData pod = new PodData();
+		PodData podData = new PodData();
 		
 		// The WAEngine is a factory for creating WAQuery objects, and it
 		// also used to perform those queries. You can set properties of the
@@ -54,7 +58,7 @@ public class QueryResultParser {
 		
 		try {
 			// For debugging purposes, print out the URL we are about to send:
-			Log.i(TAG, "Query URL:" + engine.toURL(query));
+			Log.i(TAG, "Query URL: " + engine.toURL(query));
 			
 			// This sends the URL to the Wolfram|Alpha server, gets the XML
 			// result and parses it into an object hierarchy held by the
@@ -67,9 +71,31 @@ public class QueryResultParser {
 								+ queryResult.getErrorCode()
 								+ " / error message: "
 								+ queryResult.getErrorMessage());
+			} else if (!queryResult.isSuccess()) {
+				Log.i(TAG, "Query was not understood; no results available.");
+			} else {
+				// Got a result
+				Log.i(TAG, "Successful query. Pods follow:");
+				for (WAPod pod : queryResult.getPods()) {
+					if (!pod.isError()) {
+						Log.i(TAG, pod.getTitle());
+						Log.i(TAG, "------------");
+						for (WASubpod subpod : pod.getSubpods()) {
+							for (Object element : subpod.getContents()) {
+								if (element instanceof WAPlainText) {
+									Log.i(TAG,
+											((WAPlainText) element).getText());
+								}
+							}
+						}
+					}
+				}
+				// We ignored many other types of Wolfram|Alpha output, such as
+				// warnings, assumptions, etc. These can be obtained by methods
+				// of WAQueryResult or objects deeper in the hierarchy.
 			}
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch (WAException e) {
+			e.printStackTrace();
 		}
 		
 		return data;
