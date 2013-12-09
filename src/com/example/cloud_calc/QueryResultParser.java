@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.wolfram.alpha.WAEngine;
 import com.wolfram.alpha.WAException;
+import com.wolfram.alpha.WAImage;
 import com.wolfram.alpha.WAPlainText;
 import com.wolfram.alpha.WAPod;
 import com.wolfram.alpha.WAQuery;
@@ -20,7 +21,9 @@ import com.wolfram.alpha.WASubpod;
  * 
  */
 public class QueryResultParser {
-	public ArrayList<PodData> data;
+	public QueryResultData queryResultData;
+	public ArrayList<PodData> podDataArray;
+	public ArrayList<SubPodData> subPodDataArray;
 	
 	// PUT APPID HERE:
 	private final static String APPID = "XK6UL2-VWVWL9UJ98";
@@ -33,9 +36,10 @@ public class QueryResultParser {
 		this.setQueryString(queryString);
 	}
 	
-	public ArrayList<PodData> getResultData() {
-		data = new ArrayList<PodData>();
-		PodData podData = new PodData();
+	public QueryResultData getResultData() {
+		queryResultData = new QueryResultData();
+		podDataArray = new ArrayList<PodData>();
+		subPodDataArray = new ArrayList<SubPodData>();
 		
 		// The WAEngine is a factory for creating WAQuery objects, and it
 		// also used to perform those queries. You can set properties of the
@@ -49,6 +53,7 @@ public class QueryResultParser {
 		// this WAEngine.
 		engine.setAppID(APPID);
 		engine.addFormat("plaintext");
+		engine.addFormat("image");
 		
 		// Create the query.
 		WAQuery query = engine.createQuery();
@@ -76,20 +81,57 @@ public class QueryResultParser {
 			} else {
 				// Got a result
 				Log.i(TAG, "Successful query. Pods follow:");
+				
+				Log.w(TAG, "queryResult.getPods() loop start");
 				for (WAPod pod : queryResult.getPods()) {
 					if (!pod.isError()) {
-						Log.i(TAG, pod.getTitle());
-						Log.i(TAG, "------------");
+						PodData podData = new PodData();
+						podData.setTitle(pod.getTitle());
+						
+						Log.i(TAG, "Title: " + podData.getTitle());
+						
+						Log.w(TAG, "pod.getSubpods() loop start");
 						for (WASubpod subpod : pod.getSubpods()) {
-							for (Object element : subpod.getContents()) {
-								if (element instanceof WAPlainText) {
-									Log.i(TAG,
-											((WAPlainText) element).getText());
-								}
+							Log.w(TAG, "subpod.getContents() loop start");
+							SubPodData subPodData = new SubPodData();
+							if (!subpod.getTitle().isEmpty()) {
+								subPodData.setTitle(subpod.getTitle());
+								Log.e(TAG,
+										"SubPodTitle: " + subPodData.getTitle());
 							}
+							for (Object element : subpod.getContents()) {
+								
+								if (element instanceof WAPlainText) {
+									subPodData
+											.setPlainText(((WAPlainText) element)
+													.getText());
+									
+									Log.i(TAG,
+											"PlainText: "
+													+ subPodData.getPlainText());
+								}
+								if (element instanceof WAImage) {
+									subPodData.setImgSrc(((WAImage) element)
+											.getURL());
+									
+									Log.i(TAG,
+											"Images: " + subPodData.getImgSrc());
+								}
+								subPodDataArray.add(subPodData);
+								podData.setSubData(subPodDataArray);
+							}
+							Log.w(TAG, "subpod.getContents() loop end");
+							
 						}
+						Log.w(TAG, "pod.getSubpods() loop end");
+						
+						podDataArray.add(podData);
 					}
 				}
+				Log.w(TAG, "queryResult.getPods() loop end");
+				
+				queryResultData.setPodDatas(podDataArray);
+				
 				// We ignored many other types of Wolfram|Alpha output, such as
 				// warnings, assumptions, etc. These can be obtained by methods
 				// of WAQueryResult or objects deeper in the hierarchy.
@@ -98,7 +140,7 @@ public class QueryResultParser {
 			e.printStackTrace();
 		}
 		
-		return data;
+		return queryResultData;
 	}
 	
 	/**

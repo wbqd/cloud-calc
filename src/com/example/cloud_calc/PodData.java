@@ -1,5 +1,7 @@
 package com.example.cloud_calc;
 
+import java.util.ArrayList;
+
 /**
  * @author Joshua Jung
  * @Description pod elements are subelements of queryresult. Each contains the
@@ -27,6 +29,8 @@ public class PodData {
 	
 	// The number of subpod elements present.
 	private String numsubpods;
+	
+	private ArrayList<SubPodData> subPodDataArray;
 	
 	/**
 	 * @return the title
@@ -116,5 +120,20 @@ public class PodData {
 	 */
 	public void setNumsubpods(String numsubpods) {
 		this.numsubpods = numsubpods;
+	}
+	
+	/**
+	 * @return the subData
+	 */
+	public ArrayList<SubPodData> getSubData() {
+		return subPodDataArray;
+	}
+	
+	/**
+	 * @param subDataArray
+	 *            the subData to set
+	 */
+	public void setSubData(ArrayList<SubPodData> subDataArray) {
+		this.subPodDataArray = subDataArray;
 	}
 }
