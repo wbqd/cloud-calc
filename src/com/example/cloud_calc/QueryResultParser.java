@@ -22,8 +22,6 @@ import com.wolfram.alpha.WASubpod;
  */
 public class QueryResultParser {
 	public QueryResultData queryResultData;
-	public ArrayList<PodData> podDataArray;
-	public ArrayList<SubPodData> subPodDataArray;
 	
 	// PUT APPID HERE:
 	private final static String APPID = "XK6UL2-VWVWL9UJ98";
@@ -36,10 +34,10 @@ public class QueryResultParser {
 		this.setQueryString(queryString);
 	}
 	
-	public QueryResultData getResultData() {
+	public ArrayList<PodData> getQueryResultData() {
 		queryResultData = new QueryResultData();
-		podDataArray = new ArrayList<PodData>();
-		subPodDataArray = new ArrayList<SubPodData>();
+		// Create podDataArray
+		ArrayList<PodData> podDataArray = new ArrayList<PodData>();
 		
 		// The WAEngine is a factory for creating WAQuery objects, and it
 		// also used to perform those queries. You can set properties of the
@@ -81,13 +79,17 @@ public class QueryResultParser {
 			} else {
 				// Got a result
 				Log.i(TAG, "Successful query. Pods follow:");
-				
 				Log.w(TAG, "queryResult.getPods() loop start");
+				
 				for (WAPod pod : queryResult.getPods()) {
 					if (!pod.isError()) {
+						// Create podData
 						PodData podData = new PodData();
-						podData.setTitle(pod.getTitle());
 						
+						// Create subPodDataArray
+						ArrayList<SubPodData> subPodDataArray = new ArrayList<SubPodData>();
+						
+						podData.setTitle(pod.getTitle());
 						Log.i(TAG, "Title: " + podData.getTitle());
 						
 						Log.w(TAG, "pod.getSubpods() loop start");
@@ -100,7 +102,6 @@ public class QueryResultParser {
 										"SubPodTitle: " + subPodData.getTitle());
 							}
 							for (Object element : subpod.getContents()) {
-								
 								if (element instanceof WAPlainText) {
 									subPodData
 											.setPlainText(((WAPlainText) element)
@@ -117,14 +118,12 @@ public class QueryResultParser {
 									Log.i(TAG,
 											"Images: " + subPodData.getImgSrc());
 								}
-								subPodDataArray.add(subPodData);
-								podData.setSubData(subPodDataArray);
 							}
 							Log.w(TAG, "subpod.getContents() loop end");
-							
+							subPodDataArray.add(subPodData);
 						}
 						Log.w(TAG, "pod.getSubpods() loop end");
-						
+						podData.setSubData(subPodDataArray);
 						podDataArray.add(podData);
 					}
 				}
@@ -140,7 +139,7 @@ public class QueryResultParser {
 			e.printStackTrace();
 		}
 		
-		return queryResultData;
+		return podDataArray;
 	}
 	
 	/**

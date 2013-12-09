@@ -16,8 +16,12 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.example.cloud_calc.QueryResultActivity"
+            android:label="@string/title_activity_query_result" >
+        </activity>
+        <activity
             android:name="com.example.cloud_calc.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

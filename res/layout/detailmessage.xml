@@ -1,0 +1,89 @@
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrViewsum"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<RelativeLayout 
+      android:id="@+id/relative"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+	    android:layout_marginLeft="10dip"
+	    android:layout_marginRight="10dip"
+    >
+    <TextView
+        android:id="@+id/sum_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+	    android:layout_marginTop="20dip"
+        android:layout_marginLeft="10dip"
+        android:text="formula"
+        >
+    </TextView>
+    <EditText
+        android:id="@+id/sum_formula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/sum_1"
+	    android:layout_alignBottom="@+id/sum_1"
+        android:layout_marginLeft="15dip"
+        android:hint="@string/query_field" />
+	<TextView
+        android:layout_below="@+id/sum_1"
+	    android:id="@+id/sum_2"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="20dip"
+	    android:layout_marginLeft="10dip"
+	    android:text="from"
+	    />
+	<EditText	    
+	    android:layout_alignLeft="@+id/sum_formula"
+	        android:layout_alignBottom="@+id/sum_2"
+	        android:id="@+id/sum_from"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:hint="@string/query_field" />
+	<Button 
+	    android:layout_alignRight="@+id/sum_from"
+	    android:layout_alignBottom="@+id/sum_2"
+	    android:id="@+id/from_infinity_btn"
+	    android:layout_width="35dip"
+	    android:layout_height="35dip"
+	    android:text="∞"
+	    android:textSize="12sp"
+	    />
+	<TextView
+        android:layout_below="@+id/sum_2"
+	    android:id="@+id/sum_3"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="20dip"
+	    android:layout_marginLeft="10dip"
+	    android:text="To"
+	    />
+	<EditText
+	    
+	    android:layout_alignLeft="@+id/sum_formula"
+        android:layout_alignBottom="@+id/sum_3"
+        android:id="@+id/sum_to"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/query_field" />
+	<Button 
+	    android:layout_alignRight="@+id/sum_to"
+	    android:layout_alignBottom="@+id/sum_3"
+	    android:id="@+id/to_infinity_btn"
+	    android:layout_width="35dip"
+	    android:layout_height="35dip"
+	    android:text="∞"
+	    android:textSize="12sp"
+	    />
+	 <Button
+	        android:layout_below="@+id/sum_3"
+	        android:id="@+id/test_btn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"	
+	        android:layout_alignParentRight="true"
+	        android:text="Submit" />
+</RelativeLayout></ScrollView>
