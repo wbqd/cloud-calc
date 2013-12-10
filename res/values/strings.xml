@@ -8,7 +8,7 @@
     <string name="title_activity_main">Cloud Calc</string>
     <string name="title_section1">QUICK</string>
     <string name="title_section2">DETAIL</string>
-    <string name="query_field">Input data</string>
+    <string name="query_field">Enter what you want to calculate or know about:</string>
     <string name="query_btn">=</string>
     <string name="sum">SUM</string>
 

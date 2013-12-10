@@ -3,7 +3,7 @@
   realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
   <class id="1" language="java" name="com.example.cloud_calc.MainActivity.SectionsPagerAdapter" project="cloud-calc" 
     file="/cloud-calc/src/com/example/cloud_calc/MainActivity.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="270" x="213" y="456"/>    
+    <position height="153" width="270" x="211" y="543"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="com.example.cloud_calc.MainActivity" project="cloud-calc" 
     file="/cloud-calc/src/com/example/cloud_calc/MainActivity.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="208" x="213" y="209"/>    
+    <position height="135" width="208" x="211" y="296"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="com.example.cloud_calc.CustomAdapter" project="cloud-calc" 
     file="/cloud-calc/src/com/example/cloud_calc/CustomAdapter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="208" x="1149" y="456"/>    
+    <position height="117" width="208" x="1147" y="543"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="com.example.cloud_calc.QueryResultParser" project="cloud-calc" 
     file="/cloud-calc/src/com/example/cloud_calc/QueryResultParser.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="231" x="1397" y="456"/>    
+    <position height="207" width="231" x="1395" y="543"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="com.example.cloud_calc.DetailFragment" project="cloud-calc" 
     file="/cloud-calc/src/com/example/cloud_calc/DetailFragment.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="293" x="461" y="209"/>    
+    <position height="117" width="293" x="459" y="296"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="com.example.cloud_calc.QuickFragment" project="cloud-calc" 
     file="/cloud-calc/src/com/example/cloud_calc/QuickFragment.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="293" x="1127" y="209"/>    
+    <position height="207" width="293" x="1125" y="296"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="com.example.cloud_calc.keyFragment" project="cloud-calc" 
     file="/cloud-calc/src/com/example/cloud_calc/keyFragment.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="293" x="794" y="209"/>    
+    <position height="99" width="293" x="792" y="296"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="com.example.cloud_calc.PodData" project="cloud-calc" 
     file="/cloud-calc/src/com/example/cloud_calc/PodData.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="441" width="229" x="1397" y="1616"/>    
+    <position height="441" width="229" x="1395" y="1703"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="com.example.cloud_calc.MainActivity.DummySectionFragment" project="cloud-calc" 
     file="/cloud-calc/src/com/example/cloud_calc/MainActivity.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="293" x="523" y="456"/>    
+    <position height="117" width="293" x="521" y="543"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,7 +84,7 @@
   </class>  
   <class id="10" language="java" name="com.example.cloud_calc.SubPodData" project="cloud-calc" 
     file="/cloud-calc/src/com/example/cloud_calc/SubPodData.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="297" width="142" x="1397" y="2097"/>    
+    <position height="423" width="144" x="1395" y="2184"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="com.example.cloud_calc.QueryResultActivity" project="cloud-calc" 
     file="/cloud-calc/src/com/example/cloud_calc/QueryResultActivity.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="208" x="1460" y="209"/>    
+    <position height="207" width="208" x="1458" y="296"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,7 +102,7 @@
   </class>  
   <class id="12" language="java" name="com.example.cloud_calc.QueryResultData" project="cloud-calc" 
     file="/cloud-calc/src/com/example/cloud_calc/QueryResultData.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="873" width="215" x="1397" y="703"/>    
+    <position height="873" width="215" x="1395" y="790"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -110,57 +110,58 @@
     </display>  
   </class>  
   <association id="13">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="14" name="mSectionsPagerAdapter"/>      
-      <multiplicity id="15" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="16">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="17" name="adapter"/>      
-      <multiplicity id="18" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="19">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="9"/>  
-  </nesting>  
-  <association id="20">    
-    <bendpoint x="1658" y="456"/>    
-    <bendpoint x="1658" y="703"/>    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="21" name="podDataArray"/>      
-      <multiplicity id="22" minimum="0" maximum="2147483647"/>    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="14" name="podDataArray"/>      
+      <multiplicity id="15" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="23">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="24" name="subPodDataArray"/>      
-      <multiplicity id="25" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="26">    
+  <nesting id="16">    
     <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="1"/>  
+    <end type="TARGET" refId="9"/>  
   </nesting>  
-  <association id="27">    
+  <association id="17">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="28" name="queryResultData"/>      
-      <multiplicity id="29" minimum="0" maximum="1"/>    
+      <attribute id="18" name="queryResultData"/>      
+      <multiplicity id="19" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <nesting id="20">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </nesting>  
+  <association id="21">    
+    <bendpoint x="1656" y="543"/>    
+    <bendpoint x="1656" y="790"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="22" name="podDataArray"/>      
+      <multiplicity id="23" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="24">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="25" name="subPodDataArray"/>      
+      <multiplicity id="26" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="27">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="28" name="mSectionsPagerAdapter"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="30">    
-    <end type="SOURCE" refId="12" navigable="false">      
+    <bendpoint x="1280" y="790"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
       <attribute id="31" name="podDataArray"/>      
       <multiplicity id="32" minimum="0" maximum="2147483647"/>    
     </end>    
@@ -176,12 +177,11 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="36">    
-    <bendpoint x="1282" y="703"/>    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="37" name="podDataArray"/>      
-      <multiplicity id="38" minimum="0" maximum="2147483647"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="37" name="adapter"/>      
+      <multiplicity id="38" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 

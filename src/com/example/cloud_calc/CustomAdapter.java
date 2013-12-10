@@ -62,6 +62,10 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 					.setMinimumWidth(podData.getSubData().get(0).getImgWidth() * 2);
 			imageView.setMinimumHeight(podData.getSubData().get(0)
 					.getImgHeight() * 2);
+			imageView
+					.setMaxWidth(podData.getSubData().get(0).getImgWidth() * 3);
+			imageView
+					.setMaxHeight(podData.getSubData().get(0).getImgHeight() * 3);
 			imageView.setImageBitmap(podData.getSubData().get(0).getBitmap());
 		}
 		return view;

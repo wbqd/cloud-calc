@@ -32,7 +32,6 @@ public class QuickFragment extends Fragment implements OnClickListener {
 		et = (EditText) view.findViewById(R.id.query_field);
 		bt = (Button) view.findViewById(R.id.query_btn);
 		
-		et.setHint("Enter what you want to calculate or know about:");
 		bt.setOnClickListener(this);
 		return view;
 	}
