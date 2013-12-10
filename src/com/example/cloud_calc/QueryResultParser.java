@@ -126,17 +126,18 @@ public class QueryResultParser {
 											.getURL());
 									subPodData.setBitmap(getBitmap(subPodData
 											.getImgSrc()));
+									subPodData
+											.setDimensions(((WAImage) element)
+													.getDimensions());
 									Log.i(TAG,
 											"Images: " + subPodData.getImgSrc());
+									Log.i(TAG, "Images Dimensions: "
+											+ subPodData.getImgWidth() + " x "
+											+ subPodData.getImgHeight());
 								}
 							}
 							Log.w(TAG, "subpod.getContents() loop end");
 							subPodDataArray.add(subPodData);
-						}
-						
-						// Assumptions handling
-						for (WAAssumption assumption : queryResult.getAssumptions()) {
-							
 						}
 						
 						Log.w(TAG, "pod.getSubpods() loop end");

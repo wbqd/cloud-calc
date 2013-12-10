@@ -69,6 +69,10 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 						.getPlainText());
 				textViewSubPodPlainText.setVisibility(TextView.VISIBLE);
 			}
+			imageView
+					.setMinimumWidth(podData.getSubData().get(0).getImgWidth() * 2);
+			imageView.setMinimumHeight(podData.getSubData().get(0)
+					.getImgHeight() * 2);
 			imageView.setImageBitmap(podData.getSubData().get(0).getBitmap());
 			
 			// new Thread() {
