@@ -2,13 +2,12 @@ package com.example.cloud_calc;
 
 import java.util.ArrayList;
 
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.os.StrictMode;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.Menu;
 import android.widget.ListView;
 
@@ -24,10 +23,6 @@ public class QueryResultActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_query_result);
-		
-//		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-//				.permitAll().build();
-//		StrictMode.setThreadPolicy(policy);
 		
 		Intent intent = getIntent();
 		Bundle myBundle = intent.getExtras();
