@@ -16,6 +16,7 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.wolfram.alpha.WAAssumption;
 import com.wolfram.alpha.WAEngine;
 import com.wolfram.alpha.WAException;
 import com.wolfram.alpha.WAImage;
@@ -132,6 +133,12 @@ public class QueryResultParser {
 							Log.w(TAG, "subpod.getContents() loop end");
 							subPodDataArray.add(subPodData);
 						}
+						
+						// Assumptions handling
+						for (WAAssumption assumption : queryResult.getAssumptions()) {
+							
+						}
+						
 						Log.w(TAG, "pod.getSubpods() loop end");
 						podData.setSubData(subPodDataArray);
 						podDataArray.add(podData);
