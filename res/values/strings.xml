@@ -4,8 +4,8 @@
     <string name="app_name">Cloud Calc</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_query_result">QueryResultActivity</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_query_result">Calc Result</string>
+    <string name="title_activity_main">Cloud Calc</string>
     <string name="title_section1">QUICK</string>
     <string name="title_section2">DETAIL</string>
     <string name="query_field">Input data</string>
