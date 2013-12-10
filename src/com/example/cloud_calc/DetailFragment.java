@@ -210,6 +210,39 @@ public class DetailFragment extends Fragment {
 				
 			}
 		});
+		// etc_ btn
+		Button etc_btn = (Button) view.findViewById(R.id.etcbtn);
+		etc_btn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				LinearLayout linear = (LinearLayout) view
+						.findViewById(R.id.sum_liner);
+				if (linear.getChildCount() >= 3) {
+					linear.removeViewAt(2);
+				} else {
+					LinearLayout rel = (LinearLayout) View.inflate(getActivity(),
+							R.layout.etcmessage, null);
+					//rel.setBackgroundColor(Color.rgb(198, 240, 255));
+					// for margin
+					LinearLayout.LayoutParams margin = new LinearLayout.LayoutParams(
+							LinearLayout.LayoutParams.WRAP_CONTENT,
+							LinearLayout.LayoutParams.WRAP_CONTENT);
+					margin.setMargins(40, 0, 40, 0);
+					linear.addView(rel, margin);
+					
+					Toast.makeText(mContext, "Etc", Toast.LENGTH_SHORT)
+							.show();
+					
+
+				
+				}
+		
+			}
+		});
+		
+		
 		// delete_btn
 		Button delete_btn = (Button) view.findViewById(R.id.delete);
 		delete_btn.setOnClickListener(new View.OnClickListener() {

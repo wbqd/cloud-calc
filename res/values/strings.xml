@@ -10,6 +10,26 @@
     <string name="title_section2">DETAIL</string>
     <string name="query_field">Input data</string>
     <string name="query_btn">=</string>
-    <string name="sum">SUM</string>
+    <string name="btn_etc_1.1">π</string>
+    <string name="btn_etc_1.2">°</string>
+    <string name="btn_etc_1.3">∞</string>
+    <string name="btn_etc_1.4">√</string>
+    <string name="btn_etc_1.5">∫</string>
+    <string name="btn_etc_1.6">∑</string>
+    <string name="btn_etc_1.7">∂</string>
+    <string name="btn_etc_2.1">∏</string>
+    <string name="btn_etc_2.2">∀</string>
+    <string name="btn_etc_2.3">∃</string>
+    <string name="btn_etc_2.4">∪</string>
+    <string name="btn_etc_2.5">∩</string>
+    <string name="btn_etc_2.6">∇</string>
+    <string name="btn_etc_2.7">Δ</string>
+    <string name="btn_etc_3.1">α</string>
+    <string name="btn_etc_3.2">β</string>
+    <string name="btn_etc_3.3">γ</string>
+    <string name="btn_etc_3.4">δ</string>
+    <string name="btn_etc_3.5">ε</string>
+    <string name="btn_etc_3.6">η</string>
+    <string name="btn_etc_3.7">θ</string>
 
 </resources>
