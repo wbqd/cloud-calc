@@ -3,6 +3,8 @@
  */
 package com.example.cloud_calc;
 
+import android.graphics.Bitmap;
+
 /**
  * @author Joshua
  * 
@@ -11,6 +13,7 @@ public class SubPodData {
 	private String title;
 	private String plainText;
 	private String imgSrc;
+	private Bitmap bitmap;
 	
 	/**
 	 * @return the title
@@ -55,5 +58,19 @@ public class SubPodData {
 	 */
 	public void setImgSrc(String imgSrc) {
 		this.imgSrc = imgSrc;
+	}
+
+	/**
+	 * @return the bitmap
+	 */
+	public Bitmap getBitmap() {
+		return bitmap;
+	}
+
+	/**
+	 * @param bitmap the bitmap to set
+	 */
+	public void setBitmap(Bitmap bitmap) {
+		this.bitmap = bitmap;
 	}
 }

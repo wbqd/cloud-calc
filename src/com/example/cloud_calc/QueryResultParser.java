@@ -3,9 +3,18 @@
  */
 package com.example.cloud_calc;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.wolfram.alpha.WAEngine;
 import com.wolfram.alpha.WAException;
@@ -114,7 +123,8 @@ public class QueryResultParser {
 								if (element instanceof WAImage) {
 									subPodData.setImgSrc(((WAImage) element)
 											.getURL());
-									
+									subPodData.setBitmap(getBitmap(subPodData
+											.getImgSrc()));
 									Log.i(TAG,
 											"Images: " + subPodData.getImgSrc());
 								}
@@ -137,6 +147,8 @@ public class QueryResultParser {
 			}
 		} catch (WAException e) {
 			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 		return podDataArray;
@@ -155,5 +167,15 @@ public class QueryResultParser {
 	 */
 	public void setQueryString(String queryString) {
 		this.queryString = queryString;
+	}
+	
+	public Bitmap getBitmap(String imgSrc) throws IOException {
+		URL imgUrl = new URL(imgSrc);
+		HttpURLConnection con = (HttpURLConnection) imgUrl.openConnection();
+		BufferedInputStream bis = new BufferedInputStream(con.getInputStream(),
+				65536);
+		Bitmap bitmap = BitmapFactory.decodeStream(bis);
+		bis.close();
+		return bitmap;
 	}
 }

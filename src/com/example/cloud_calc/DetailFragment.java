@@ -25,9 +25,24 @@ public class DetailFragment extends Fragment {
 				container, false);
 		// final RelativeLayout rel =
 		// (RelativeLayout)inflater.inflate(R.layout.summessage,m);
+		Button submit_btn = (Button) view.findViewById(R.id.detail_btn);
+		submit_btn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				EditText inputText = (EditText) view.findViewById(R.id.detail_field);
+				String queryString = inputText.getText().toString();
+				
+				Intent intent = new Intent(getActivity(), QueryResultActivity.class);
+				Bundle data = new Bundle();
+				data.putString("queryString", queryString);
+				intent.putExtras(data);
+				startActivity(intent);
+			}
+		});
 		Button sum_btn = (Button) view.findViewById(R.id.sumbtn);
 		sum_btn.setOnClickListener(new View.OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -211,5 +226,4 @@ public class DetailFragment extends Fragment {
 		
 		return view;
 	}
-	
 }

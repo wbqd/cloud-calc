@@ -8,6 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * @author Joshua
@@ -32,6 +34,9 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 	
 	private ArrayList<PodData> podDataArray;
 	private View view;
+	// private URL imageUrl;
+	// private ImageView imageView;
+	private ProgressDialog dialog;
 	
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -44,7 +49,7 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 					.inflate(R.layout.query_result_list_view, null);
 		}
 		
-		PodData podData = podDataArray.get(position);
+		final PodData podData = podDataArray.get(position);
 		if (podData != null) {
 			ImageView imageView = (ImageView) view
 					.findViewById(R.id.subpod_image);
@@ -64,23 +69,31 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 						.getPlainText());
 				textViewSubPodPlainText.setVisibility(TextView.VISIBLE);
 			}
+			imageView.setImageBitmap(podData.getSubData().get(0).getBitmap());
 			
-			URL imageUrl;
-			try {
-				imageUrl = new URL(podData.getSubData().get(0).getImgSrc());
-				HttpURLConnection con = (HttpURLConnection) imageUrl
-						.openConnection();
-				BufferedInputStream bis = new BufferedInputStream(
-						con.getInputStream(), 10240);
-				
-				Bitmap bm = BitmapFactory.decodeStream(bis);
-				bis.close();
-				imageView.setImageBitmap(bm);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
+			// new Thread() {
+			// public void run() {
+			// dialog = ProgressDialog.show(getContext(), "Loading...",
+			// "Loading...", true, false);
+			// URL imageUrl;
+			// try {
+			// imageUrl = new URL(podData.getSubData().get(0).getImgSrc());
+			// Toast.makeText(getContext(), "imageUrl",
+			// Toast.LENGTH_SHORT).show();
+			// HttpURLConnection con = (HttpURLConnection) imageUrl
+			// .openConnection();
+			// BufferedInputStream bis = new BufferedInputStream(
+			// con.getInputStream(), 10240);
+			//
+			// Bitmap bm = BitmapFactory.decodeStream(bis);
+			// bis.close();
+			// imageView.setImageBitmap(bm);
+			// } catch (Exception e) {
+			// e.printStackTrace();
+			// }
 		}
+		// }.start();
+		// }
 		
 		return view;
 	}

@@ -25,16 +25,16 @@ public class QueryResultActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_query_result);
 		
-		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-				.permitAll().build();
-		StrictMode.setThreadPolicy(policy);
+//		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+//				.permitAll().build();
+//		StrictMode.setThreadPolicy(policy);
 		
 		Intent intent = getIntent();
 		Bundle myBundle = intent.getExtras();
 		queryString = myBundle.getString("queryString");
 		
 		listView = (ListView) findViewById(R.id.find_listview);
-		getQueryResultFromWA("sin x^3");
+		getQueryResultFromWA(queryString);
 	}
 	
 	public void getQueryResultFromWA(final String queryString) {
