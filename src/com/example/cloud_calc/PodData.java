@@ -1,6 +1,13 @@
 package com.example.cloud_calc;
 
+import java.io.File;
 import java.util.ArrayList;
+
+import org.w3c.dom.Element;
+
+import com.wolfram.alpha.WAException;
+import com.wolfram.alpha.impl.WAPodImpl;
+import com.wolfram.alpha.net.HttpProvider;
 
 /**
  * @author Joshua Jung

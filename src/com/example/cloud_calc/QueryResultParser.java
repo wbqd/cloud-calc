@@ -31,7 +31,6 @@ import com.wolfram.alpha.WASubpod;
  * 
  */
 public class QueryResultParser {
-	public QueryResultData queryResultData;
 	
 	// PUT APPID HERE:
 	private final static String APPID = "XK6UL2-VWVWL9UJ98";
@@ -44,10 +43,9 @@ public class QueryResultParser {
 		this.setQueryString(queryString);
 	}
 	
-	public ArrayList<PodData> getQueryResultData() {
-		queryResultData = new QueryResultData();
+	public ArrayList<WAPod> getQueryResultData() {
 		// Create podDataArray
-		ArrayList<PodData> podDataArray = new ArrayList<PodData>();
+		ArrayList<WAPod> podDataArray = new ArrayList<WAPod>();
 		
 		// The WAEngine is a factory for creating WAQuery objects, and it
 		// also used to perform those queries. You can set properties of the
@@ -93,51 +91,47 @@ public class QueryResultParser {
 				
 				for (WAPod pod : queryResult.getPods()) {
 					if (!pod.isError()) {
-						// Create podData
-						PodData podData = new PodData();
 						
 						// Create subPodDataArray
-						ArrayList<SubPodData> subPodDataArray = new ArrayList<SubPodData>();
+						ArrayList<WASubpod> subPodDataArray = new ArrayList<WASubpod>();
 						
-						podData.setTitle(pod.getTitle());
-						Log.i(TAG, "Title: " + podData.getTitle());
+						Log.i(TAG, "Title: " + pod.getTitle());
 						
 						Log.w(TAG, "pod.getSubpods() loop start");
 						for (WASubpod subpod : pod.getSubpods()) {
 							Log.w(TAG, "subpod.getContents() loop start");
-							SubPodData subPodData = new SubPodData();
 							if (!subpod.getTitle().isEmpty()) {
-								subPodData.setTitle(subpod.getTitle());
 								Log.e(TAG,
-										"SubPodTitle: " + subPodData.getTitle());
+										"SubPodTitle: " + subpod.getTitle());
 							}
 							for (Object element : subpod.getContents()) {
-								if (element instanceof WAPlainText) {
-									subPodData
-											.setPlainText(((WAPlainText) element)
-													.getText());
-									
-									Log.i(TAG,
-											"PlainText: "
-													+ subPodData.getPlainText());
+//								if (element instanceof WAPlainText) {
+//									subPodData
+//											.setPlainText(((WAPlainText) element)
+//													.getText());
+//									
+//									Log.i(TAG,
+//											"PlainText: "
+//													+ subPodData.getPlainText());
+//								}
+//								if (element instanceof WAImage) {
+//									subPodData.setImgSrc(((WAImage) element)
+//											.getURL());
+//									subPodData.setBitmap(getBitmap(subPodData
+//											.getImgSrc()));
+//									subPodData
+//											.setDimensions(((WAImage) element)
+//													.getDimensions());
+//									Log.i(TAG,
+//											"Images: " + ((WAImage) element)
+//															.getURL());
+//									Log.i(TAG, "Images Dimensions: "
+//											+ subPodData.getImgWidth() + " x "
+//											+ subPodData.getImgHeight());
 								}
-								if (element instanceof WAImage) {
-									subPodData.setImgSrc(((WAImage) element)
-											.getURL());
-									subPodData.setBitmap(getBitmap(subPodData
-											.getImgSrc()));
-									subPodData
-											.setDimensions(((WAImage) element)
-													.getDimensions());
-									Log.i(TAG,
-											"Images: " + subPodData.getImgSrc());
-									Log.i(TAG, "Images Dimensions: "
-											+ subPodData.getImgWidth() + " x "
-											+ subPodData.getImgHeight());
-								}
+							subPodDataArray.add(subpod);
 							}
 							Log.w(TAG, "subpod.getContents() loop end");
-							subPodDataArray.add(subPodData);
 						}
 						
 						Log.w(TAG, "pod.getSubpods() loop end");
