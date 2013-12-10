@@ -100,7 +100,7 @@ public class DetailFragment extends Fragment {
 							EditText from = (EditText) view
 									.findViewById(R.id.sum_from);
 							str = from.getText();
-							str.append("infinity");
+							str.append("-infinity");
 							from.setText(str);
 						}
 					});
@@ -165,13 +165,13 @@ public class DetailFragment extends Fragment {
 									.findViewById(R.id.detail_field);
 							EditText temp;
 							str_querry = a.getText();
-							temp = (EditText) view.findViewById(R.id.sum_from);
-							str_querry.append("Integral FROM " + temp.getText());
-							temp = (EditText) view.findViewById(R.id.sum_to);
-							str_querry.append(" TO " + temp.getText());
 							temp = (EditText) view
 									.findViewById(R.id.sum_formula);
-							str_querry.append(", " + temp.getText());
+							str_querry.append("¡ò " + temp.getText());
+							temp = (EditText) view.findViewById(R.id.sum_from);
+							str_querry.append(" from "+ temp.getText());
+							temp = (EditText) view.findViewById(R.id.sum_to);
+							str_querry.append(" TO " + temp.getText());
 							a.setText(str_querry);
 							
 						}
@@ -187,7 +187,7 @@ public class DetailFragment extends Fragment {
 							EditText from = (EditText) view
 									.findViewById(R.id.sum_from);
 							str = from.getText();
-							str.append("infinity");
+							str.append("-infinity");
 							from.setText(str);
 						}
 					});

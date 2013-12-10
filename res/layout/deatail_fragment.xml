@@ -42,12 +42,17 @@
 	            android:id="@+id/sumbtn"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:text="@string/sum" />
+	            android:text="Sum" />
 	        <Button
 	            android:id="@+id/intbtn"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:text="Integral" />
+	            android:text="Integral" />	       
+	         <Button
+	            android:id="@+id/etcbtn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Etc" />
 	        <Button
 	            android:id="@+id/delete"
 	            android:layout_width="wrap_content"
