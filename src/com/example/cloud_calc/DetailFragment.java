@@ -15,6 +15,17 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
+import android.annotation.*;
+import android.content.*;
+import android.graphics.*;
+import android.os.*;
+import android.support.v4.app.*;
+import android.text.*;
+import android.view.*;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.view.ViewGroup.MarginLayoutParams;
+import android.widget.*;
 
 @SuppressLint("ValidFragment")
 public class DetailFragment extends Fragment {
@@ -105,7 +116,7 @@ public class DetailFragment extends Fragment {
 							EditText from = (EditText) view
 									.findViewById(R.id.sum_from);
 							str = from.getText();
-							str.append("infinity");
+							str.append("-infinity");
 							from.setText(str);
 						}
 					});
@@ -170,13 +181,13 @@ public class DetailFragment extends Fragment {
 									.findViewById(R.id.detail_field);
 							EditText temp;
 							str_querry = a.getText();
-							temp = (EditText) view.findViewById(R.id.sum_from);
-							str_querry.append("Integral FROM " + temp.getText());
-							temp = (EditText) view.findViewById(R.id.sum_to);
-							str_querry.append(" TO " + temp.getText());
 							temp = (EditText) view
 									.findViewById(R.id.sum_formula);
-							str_querry.append(", " + temp.getText());
+							str_querry.append("�� " + temp.getText());
+							temp = (EditText) view.findViewById(R.id.sum_from);
+							str_querry.append(" from "+ temp.getText());
+							temp = (EditText) view.findViewById(R.id.sum_to);
+							str_querry.append(" TO " + temp.getText());
 							a.setText(str_querry);
 							
 						}
@@ -192,7 +203,7 @@ public class DetailFragment extends Fragment {
 							EditText from = (EditText) view
 									.findViewById(R.id.sum_from);
 							str = from.getText();
-							str.append("infinity");
+							str.append("-infinity");
 							from.setText(str);
 						}
 					});
@@ -215,6 +226,72 @@ public class DetailFragment extends Fragment {
 				
 			}
 		});
+		// etc_ btn
+		Button etc_btn = (Button) view.findViewById(R.id.etcbtn);
+		etc_btn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				LinearLayout linear = (LinearLayout) view
+						.findViewById(R.id.sum_liner);
+				if (linear.getChildCount() >= 3) {
+					linear.removeViewAt(2);
+				} else {
+					LinearLayout rel = (LinearLayout) View.inflate(getActivity(),
+							R.layout.etcmessage, null);
+					//rel.setBackgroundColor(Color.rgb(198, 240, 255));
+					// for margin
+					LinearLayout.LayoutParams margin = new LinearLayout.LayoutParams(
+							LinearLayout.LayoutParams.WRAP_CONTENT,
+							LinearLayout.LayoutParams.WRAP_CONTENT);
+					margin.setMargins(40, 0, 40, 0);
+					linear.addView(rel, margin);
+					
+					Toast.makeText(mContext, "Etc", Toast.LENGTH_SHORT)
+							.show();
+					//etc button event
+					OnClickListener ol = new OnClickListener() {
+
+						@Override
+						public void onClick(View v) {
+							// TODO Auto-generated method stub
+							String btn_text = ((Button)v).getText().toString(); 
+							Editable str;
+							EditText a = (EditText) view
+									.findViewById(R.id.detail_field);
+							str = a.getText();
+							str.append(btn_text);
+							a.setText(str);
+						}   
+					};
+					((Button) view.findViewById(R.id.btn_etc_1_1)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_1_2)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_1_3)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_1_4)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_1_5)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_1_6)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_1_7)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_2_1)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_2_2)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_2_3)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_2_4)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_2_5)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_2_6)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_2_7)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_3_1)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_3_2)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_3_3)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_3_4)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_3_5)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_3_6)).setOnClickListener(ol);
+					((Button) view.findViewById(R.id.btn_etc_3_7)).setOnClickListener(ol);
+				
+				}
+			}
+		});
+		
+		
 		// delete_btn
 		Button delete_btn = (Button) view.findViewById(R.id.delete);
 		delete_btn.setOnClickListener(new View.OnClickListener() {
