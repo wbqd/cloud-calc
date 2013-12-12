@@ -262,7 +262,10 @@ public class DetailFragment extends Fragment {
 									.findViewById(R.id.detail_field);
 							str = a.getText();
 							str.append(btn_text);
+							int len = a.length();
 							a.setText(str);
+							a.setSelection(len);
+							
 						}   
 					};
 					((Button) view.findViewById(R.id.btn_etc_1_1)).setOnClickListener(ol);
