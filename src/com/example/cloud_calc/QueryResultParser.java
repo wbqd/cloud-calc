@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.util.Log;
 
 import com.wolfram.alpha.WAEngine;
 import com.wolfram.alpha.WAException;

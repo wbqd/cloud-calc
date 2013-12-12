@@ -9,23 +9,13 @@ import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
-import android.annotation.*;
-import android.content.*;
-import android.graphics.*;
-import android.os.*;
-import android.support.v4.app.*;
-import android.text.*;
-import android.view.*;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
-import android.view.ViewGroup.MarginLayoutParams;
-import android.widget.*;
 
 @SuppressLint("ValidFragment")
 public class DetailFragment extends Fragment {
