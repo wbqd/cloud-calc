@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.util.Log;
 
 import com.wolfram.alpha.WAEngine;
 import com.wolfram.alpha.WAException;
@@ -67,7 +66,7 @@ public class QueryResultParser {
 		
 		try {
 			// For debugging purposes, print out the URL we are about to send:
-			Log.i(TAG, "Query URL: " + engine.toURL(query));
+			// Log.i(TAG, "Query URL: " + engine.toURL(query));
 			
 			// This sends the URL to the Wolfram|Alpha server, gets the XML
 			// result and parses it into an object hierarchy held by the
@@ -75,17 +74,17 @@ public class QueryResultParser {
 			WAQueryResult queryResult = engine.performQuery(query);
 			
 			if (queryResult.isError()) {
-				Log.i(TAG,
-						"Query error. error code: "
-								+ queryResult.getErrorCode()
-								+ " / error message: "
-								+ queryResult.getErrorMessage());
+				// Log.i(TAG,
+//						"Query error. error code: "
+//								+ queryResult.getErrorCode()
+//								+ " / error message: "
+//								+ queryResult.getErrorMessage());
 			} else if (!queryResult.isSuccess()) {
-				Log.i(TAG, "Query was not understood; no results available.");
+				// Log.i(TAG, "Query was not understood; no results available.");
 			} else {
 				// Got a result
-				Log.i(TAG, "Successful query. Pods follow:");
-				Log.w(TAG, "queryResult.getPods() loop start");
+				// Log.i(TAG, "Successful query. Pods follow:");
+				// Log.w(TAG, "queryResult.getPods() loop start");
 				
 				for (WAPod pod : queryResult.getPods()) {
 					if (!pod.isError()) {
@@ -96,16 +95,16 @@ public class QueryResultParser {
 						ArrayList<SubPodData> subPodDataArray = new ArrayList<SubPodData>();
 						
 						podData.setTitle(pod.getTitle());
-						Log.i(TAG, "Title: " + podData.getTitle());
+						// Log.i(TAG, "Title: " + podData.getTitle());
 						
-						Log.w(TAG, "pod.getSubpods() loop start");
+						// Log.w(TAG, "pod.getSubpods() loop start");
 						for (WASubpod subpod : pod.getSubpods()) {
-							Log.w(TAG, "subpod.getContents() loop start");
+							// Log.w(TAG, "subpod.getContents() loop start");
 							SubPodData subPodData = new SubPodData();
 							if (!subpod.getTitle().isEmpty()) {
 								subPodData.setTitle(subpod.getTitle());
-								Log.e(TAG,
-										"SubPodTitle: " + subPodData.getTitle());
+								// Log.e(TAG,
+//										"SubPodTitle: " + subPodData.getTitle());
 							}
 							for (Object element : subpod.getContents()) {
 								if (element instanceof WAPlainText) {
@@ -113,9 +112,9 @@ public class QueryResultParser {
 											.setPlainText(((WAPlainText) element)
 													.getText());
 									
-									Log.i(TAG,
-											"PlainText: "
-													+ subPodData.getPlainText());
+									// Log.i(TAG,
+//											"PlainText: "
+//													+ subPodData.getPlainText());
 								}
 								if (element instanceof WAImage) {
 									subPodData.setImgSrc(((WAImage) element)
@@ -125,23 +124,23 @@ public class QueryResultParser {
 									subPodData
 											.setDimensions(((WAImage) element)
 													.getDimensions());
-									Log.i(TAG,
-											"Images: " + subPodData.getImgSrc());
-									Log.i(TAG, "Images Dimensions: "
-											+ subPodData.getImgWidth() + " x "
-											+ subPodData.getImgHeight());
+									// Log.i(TAG,
+//											"Images: " + subPodData.getImgSrc());
+									// Log.i(TAG, "Images Dimensions: "
+//											+ subPodData.getImgWidth() + " x "
+//											+ subPodData.getImgHeight());
 								}
 							}
-							Log.w(TAG, "subpod.getContents() loop end");
+							// Log.w(TAG, "subpod.getContents() loop end");
 							subPodDataArray.add(subPodData);
 						}
 						
-						Log.w(TAG, "pod.getSubpods() loop end");
+						// Log.w(TAG, "pod.getSubpods() loop end");
 						podData.setSubData(subPodDataArray);
 						podDataArray.add(podData);
 					}
 				}
-				Log.w(TAG, "queryResult.getPods() loop end");
+				// Log.w(TAG, "queryResult.getPods() loop end");
 				
 				queryResultData.setPodDatas(podDataArray);
 				
