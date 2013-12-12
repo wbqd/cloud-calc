@@ -75,12 +75,13 @@ public class QueryResultParser {
 			
 			if (queryResult.isError()) {
 				// Log.i(TAG,
-//						"Query error. error code: "
-//								+ queryResult.getErrorCode()
-//								+ " / error message: "
-//								+ queryResult.getErrorMessage());
+				// "Query error. error code: "
+				// + queryResult.getErrorCode()
+				// + " / error message: "
+				// + queryResult.getErrorMessage());
 			} else if (!queryResult.isSuccess()) {
-				// Log.i(TAG, "Query was not understood; no results available.");
+				// Log.i(TAG,
+				// "Query was not understood; no results available.");
 			} else {
 				// Got a result
 				// Log.i(TAG, "Successful query. Pods follow:");
@@ -104,7 +105,7 @@ public class QueryResultParser {
 							if (!subpod.getTitle().isEmpty()) {
 								subPodData.setTitle(subpod.getTitle());
 								// Log.e(TAG,
-//										"SubPodTitle: " + subPodData.getTitle());
+								// "SubPodTitle: " + subPodData.getTitle());
 							}
 							for (Object element : subpod.getContents()) {
 								if (element instanceof WAPlainText) {
@@ -113,8 +114,8 @@ public class QueryResultParser {
 													.getText());
 									
 									// Log.i(TAG,
-//											"PlainText: "
-//													+ subPodData.getPlainText());
+									// "PlainText: "
+									// + subPodData.getPlainText());
 								}
 								if (element instanceof WAImage) {
 									subPodData.setImgSrc(((WAImage) element)
@@ -125,10 +126,10 @@ public class QueryResultParser {
 											.setDimensions(((WAImage) element)
 													.getDimensions());
 									// Log.i(TAG,
-//											"Images: " + subPodData.getImgSrc());
+									// "Images: " + subPodData.getImgSrc());
 									// Log.i(TAG, "Images Dimensions: "
-//											+ subPodData.getImgWidth() + " x "
-//											+ subPodData.getImgHeight());
+									// + subPodData.getImgWidth() + " x "
+									// + subPodData.getImgHeight());
 								}
 							}
 							// Log.w(TAG, "subpod.getContents() loop end");
